@@ -12,8 +12,8 @@ class Clicks {
         this.serverPort = options.serverPort || 9000;
         this.syncPort = options.syncPort || 8080;
         this.baseDir = options.baseDir || './';
-        this.publicDir = options.publicDir || path.resolve(this.baseDir, 'public');
-        this.devDir = options.devDir || path.resolve(this.baseDir, 'src');
+        this.publicDir = options.publicDir || path.join(this.baseDir, 'public');
+        this.devDir = options.devDir || path.join(this.baseDir, 'src');
     }
 
     init(){
@@ -21,25 +21,25 @@ class Clicks {
     }
 
     setBaseDirectory(dir){
-        this.baseDir = path.resolve(dir);
+        this.baseDir = path.join(dir);
     }
 
     setPublicDirectory(dir){
-        this.publicDir = path.resolve(this.baseDir, dir);
+        this.publicDir = path.join(this.baseDir, dir);
     }
 
     setDevDirectory(dir){
-        this.devDir = path.resolve(this.baseDir, dir);
+        this.devDir = path.join(this.baseDir, dir);
     }
 
     setCSSExtractors(){
 
-        this.EXTRACTLESS = new ExtractTextPlugin({ 
+        this.extractLess = new ExtractTextPlugin({ 
             filename: '../../src/styles/app.scss',
             allChunks: true
         });
 
-        this.EXTRACTSASS = new ExtractTextPlugin({ 
+        this.extractScss = new ExtractTextPlugin({ 
             filename: '../../src/styles/app.scss',
             allChunks: true
         });

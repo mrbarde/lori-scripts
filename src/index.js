@@ -1,4 +1,4 @@
 // export modules
 module.exports = {
-    Clicks: require('./Click')
+    Clicks: require('./Clicks')
 };
