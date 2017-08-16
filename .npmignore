@@ -1,0 +1,5 @@
+# source files
+/src
+
+# npm node modules
+/node_modules

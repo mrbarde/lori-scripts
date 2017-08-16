@@ -1,0 +1,34 @@
+{
+  "name": "lori-scripts",
+  "version": "1.0.0",
+  "description": "A bunch of scripts that make Lori work easily in a dev environment.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "test",
+    "start": "babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrbarde/lori-scripts.git"
+  },
+  "keywords": [
+    "lori",
+    "scripts",
+    "libs"
+  ],
+  "author": "Daniel Barde <mrbarde2k@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrbarde/lori-scripts/issues"
+  },
+  "homepage": "https://github.com/mrbarde/lori-scripts#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "peerDependencies": {
+    "lori-bites": "^1.0.18"
+  }
+}
