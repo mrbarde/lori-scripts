@@ -24,7 +24,7 @@ class SyncServer{
             gulp.watch(this.files[i]).on('change', RELOAD);
         }
         // exit browser sync on close
-        process.on('close', browserSync.exit());
+        process.on('close', browserSync.exit);
     }
 }
 
