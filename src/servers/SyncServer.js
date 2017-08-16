@@ -14,6 +14,7 @@ class SyncServer{
         if(browserSync.active){
             browserSync.exit();
         }
+        console.log(this.options);
         this.server = browserSync.init(this.options);
         this.watch();
     }
