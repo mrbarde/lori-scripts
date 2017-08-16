@@ -11,7 +11,7 @@ class PhpServer{
     start(){
         this.server = connect.server(this.options, this.cb);
         // close server on process close
-        process.on('close', this.server.server.closeServer);
+        process.on('close', this.server.closeServer);
     }
 }
 
