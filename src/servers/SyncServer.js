@@ -12,11 +12,10 @@ class SyncServer{
 
     start(){
         // only start if not already active
-        if(browserSync.active){
-            browserSync.exit();
+        if(!browserSync.active){
+            this.server = browserSync.init(this.options);
+            this.watch();
         }
-        this.server = browserSync.init(this.options);
-        this.watch();
     }
     
     watch(){
