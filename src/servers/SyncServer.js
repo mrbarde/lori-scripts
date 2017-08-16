@@ -1,3 +1,4 @@
+const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const RELAD = browserSync.reload;
 
@@ -5,7 +6,7 @@ class SyncServer{
 
     constructor(options, files){
         this.server = null;
-        this.options = options;
+        this.options = options || null;
         this.files = files || [];
     }
 
@@ -14,7 +15,6 @@ class SyncServer{
         if(browserSync.active){
             browserSync.exit();
         }
-        console.log(this.options);
         this.server = browserSync.init(this.options);
         this.watch();
     }
