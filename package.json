@@ -7,10 +7,6 @@
     "test": "test",
     "start": "babel src --out-dir lib"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mrbarde/lori-scripts.git"
-  },
   "keywords": [
     "lori",
     "scripts",
