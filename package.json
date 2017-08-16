@@ -1,6 +1,6 @@
 {
   "name": "lori-scripts",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A bunch of scripts that make Lori work easily in a dev environment.",
   "main": "lib/index.js",
   "scripts": {
