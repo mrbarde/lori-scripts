@@ -3,12 +3,13 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const plumber = require('gulp-plumber');
 
-module.exports = function({source, config, destination, callback}){
-    callback = callback || function() {};
+module.exports = function(options){
+    options.callback = options.callback || function() {};
     return function(){
-        return gulp.src(source)
-                   .pipe(plumber())
-                   .pipe(webpackStream(config, webpack, callback))
-                   .pipe(gulp.dest(destination));
+        console.log(options);
+        gulp.src(options.source)
+            .pipe(plumber())
+            .pipe(webpackStream(options.config, webpack, options.callback))
+            .pipe(gulp.dest(options.destination));
     }
 }
