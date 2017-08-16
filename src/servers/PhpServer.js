@@ -11,7 +11,12 @@ class PhpServer{
     start(){
         this.server = connect.server(this.options, this.cb);
         // close server on process close
-        process.on('close', this.server.closeServer);
+        if(this.server){
+            if(this.server.hasOwnProperty('closeServer')){
+                process.on('close', this.server.closeServer);
+            }
+
+        }
     }
 }
 
