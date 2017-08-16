@@ -5,7 +5,6 @@ class PhpServer{
     constructor(options, cb){
         this.server = null;
         this.options = options;
-        this.files = files || [];
         this.cb = cd || function(){};
     }
 
