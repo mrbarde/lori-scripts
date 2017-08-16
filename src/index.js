@@ -1,9 +1,9 @@
 // export modules
 module.exports = {
     Clicks: require('./Clicks'),
-    WebpackTask: require('./gulpTasks/WebpackTask'),
-    SyncTask: require('./gulpTasks/SyncTask'),
-    SassTask: require('./gulpTasks/SassTask'),
-    PhpServer: require('./gulpTasks/PhpServer'),
-    NodeServer: require('./gulpTasks/NodeServer')
+    WebpackTask: require('./tasks/WebpackTask'),
+    SassTask: require('./tasks/SassTask'),
+    SyncServer: require('./servers/SyncServer'),
+    PhpServer: require('./servers/PhpServer'),
+    NodeServer: require('./servers/NodeServer')
 };
