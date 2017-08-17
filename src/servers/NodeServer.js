@@ -14,18 +14,18 @@ class NodeServer{
     }
 
     execCb(err, stdout, stderr) {
-        if(err instanceof Error){
-            console.log(err);
-            throw err;
-        }
+        // if(err instanceof Error){
+        //     console.log(err);
+        //     throw err;
+        // }
 
-        if(stderr){
-            console.log(stderr);
-        }
+        // if(stderr){
+        //     console.log(stderr);
+        // }
         
-        if(stdout){
-            console.log(stdout);
-        }
+        // if(stdout){
+        //     console.log(stdout);
+        // }
 
         this.cb();
     }
