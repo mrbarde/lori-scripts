@@ -6,7 +6,7 @@ class NodeServer{
         this.server = null;
         this.file = file;
         this.command = "node "+this.file;
-        this.cb = cb || null;
+        this.cb = cb || function(){};
     }
 
     start(){
@@ -27,9 +27,7 @@ class NodeServer{
             console.log(stdout);
         }
 
-        if(this.cb){
-            this.cb();
-        }
+        this.cb();
     }
 }
 
