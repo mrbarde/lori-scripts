@@ -27,7 +27,6 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.1",
-    "spawn-sync": "^1.0.15",
     "webpack": "^2.7.0",
     "webpack-stream": "^4.0.0"
   },

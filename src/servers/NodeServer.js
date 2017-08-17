@@ -1,31 +1,34 @@
-const spawnSync = require('spawn-sync');
+const {exec} = require('child_process');
 
 class NodeServer{
 
     constructor(file, cb){
         this.server = null;
         this.file = file;
-        this.command = "node";
-        this.args = [this.file]
+        this.command = "node "+this.file;
         this.cb = cb || null;
     }
 
     start(){
-        
-        this.server = spawnSync(this.command, this.args);
-
-        if (this.server.status !== 0) {
-            process.stderr.write(this.server.stderr);
-            process.exit(this.server.status);
-        }
-        else {
-            process.stdout.write(this.server.stdout);
-            process.stderr.write(this.server.stderr);
-            
-            if(this.cb){
-                this.cb();
+        var callback = this.cb;
+        this.server = exec(this.command, (e, out, err) => {
+            if(e instanceof Error){
+                console.log(e);
+                throw e;
             }
-        }
+
+            if(err){
+                console.log(err);
+            }
+            
+            if(out){
+                console.log(out);
+            }
+
+            if(callback){
+                callback();
+            }
+        });
     }
 }
 
