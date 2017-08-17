@@ -10,14 +10,22 @@ class NodeServer{
     }
 
     start(){
-        this.server = exec(this.command);
+        this.server = exec(this.command, this.execCb.bind(this));
+    }
 
-        this.server.stdout.on('data', function(data) {
-            console.log(data);
-        });
-        this.server.stderr.on('data', function(data) {
-            console.log(data);
-        });
+    execcb(err, stdout, stderr) {
+        if(err instanceof Error){
+            console.log(err);
+            throw err;
+        }
+
+        if(stderr){
+            console.log(stderr);
+        }
+        
+        if(stdout){
+            console.log(stdout);
+        }
 
         if(this.cb){
             this.cb();
