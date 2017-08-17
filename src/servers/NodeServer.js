@@ -10,19 +10,9 @@ class NodeServer{
     }
 
     start(){
-        this.server = exec(this.command, {stdio: 'inherit'}, this.execCb.bind(this, this.cb));
-    }
-
-    execCb(callback, e, out, err){
-        if(e instanceof Error){
-            console.log(e);
-            throw e;
-        }
-        
-        console.log(err);
-        console.log(out);
-        if(callback){
-            callback();
+        this.server = exec(this.command, {stdio: 'inherit'});
+        if(this.cb){
+            this.cb();
         }
     }
 }
