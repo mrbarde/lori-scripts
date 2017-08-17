@@ -13,7 +13,7 @@ class NodeServer{
         this.server = exec(this.command, this.execCb.bind(this));
     }
 
-    execcb(err, stdout, stderr) {
+    execCb(err, stdout, stderr) {
         if(err instanceof Error){
             console.log(err);
             throw err;
