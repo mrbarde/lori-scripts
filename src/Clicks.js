@@ -14,6 +14,7 @@ class Clicks {
         this.baseDir = options.baseDir || './';
         this.publicDir = options.publicDir || path.join(this.baseDir, 'public');
         this.devDir = options.devDir || path.join(this.baseDir, 'src');
+        this.cssPath = options.cssPath || '../../../src/styles/app.scss';
     }
 
     init(){
@@ -32,15 +33,15 @@ class Clicks {
         this.devDir = path.join(this.baseDir, dir);
     }
 
-    setCSSExtractors(){
+    setCSSExtractors(path){
 
         this.extractLess = new ExtractTextPlugin({ 
-            filename: '../../src/styles/app.scss',
+            filename: path || this.cssPath,
             allChunks: true
         });
 
         this.extractScss = new ExtractTextPlugin({ 
-            filename: '../../src/styles/app.scss',
+            filename: path || this.cssPath,
             allChunks: true
         });
     }
