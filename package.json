@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "start": "babel src --out-dir lib",
-    "publish": "npm start && npm version patch && npm publish"
+    "pub": "npm start && npm version patch && npm publish"
   },
   "keywords": [
     "lori",
