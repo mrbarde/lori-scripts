@@ -6,28 +6,30 @@ class NodeServer{
         this.server = null;
         this.file = file;
         this.command = "node "+this.file;
-        this.cb = cb || function(){};
+        this.cb = cb || null;
     }
 
     start(){
-        this.server = exec(this.command, this.execCb.bind(this));
+        this.server = exec(this.command, this.execCb.bind(this, this.cb));
     }
 
-    execCb(err, stdout, stderr) {
-        // if(err instanceof Error){
-        //     console.log(err);
-        //     throw err;
-        // }
+    execCb(callback, err, stdout, stderr) {
+        if(err instanceof Error){
+            console.log(err);
+            throw err;
+        }
 
-        // if(stderr){
-        //     console.log(stderr);
-        // }
+        if(stderr){
+            console.log(stderr);
+        }
         
-        // if(stdout){
-        //     console.log(stdout);
-        // }
-
-        this.cb();
+        if(stdout){
+            console.log(stdout);
+        }
+        console.log(callback);
+        if(callback){
+            callback();
+        }
     }
 }
 
