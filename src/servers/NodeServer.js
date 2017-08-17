@@ -14,6 +14,7 @@ class NodeServer{
     }
 
     execCb(callback, err, stdout, stderr) {
+        console.log(callback);
         if(err instanceof Error){
             console.log(err);
             throw err;
@@ -26,7 +27,6 @@ class NodeServer{
         if(stdout){
             console.log(stdout);
         }
-        console.log(callback);
         if(callback){
             callback();
         }
