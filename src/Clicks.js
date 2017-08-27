@@ -15,8 +15,7 @@ class Clicks {
         this.publicDir = options.publicDir || path.join(this.baseDir, 'public');
         this.devDir = options.devDir || path.join(this.baseDir, 'src');
         this.cssPath = options.cssPath || '../../../src/styles/app.scss';
-        this.envConfig = options.envConfig || false;
-        this.webpackConfig = options.webpackConfig || {};
+        this.env = options.env || false;
     }
 
     init(){
