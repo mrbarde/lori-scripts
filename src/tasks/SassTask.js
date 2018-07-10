@@ -19,11 +19,13 @@ module.exports = function({source, options, file, destination}){
         ]);
     }else{ task = task.concat([ sass().on('error', sass.logError) ]); }
 
-    return pump(task.concat([
-        autoprefixer(prefixes),
-        plumber(),
-        cssnano(),
-        rename(file),
-        gulp.dest(destination),
-    ]));
+    return function(){
+        return pump(task.concat([
+            autoprefixer(prefixes),
+            plumber(),
+            cssnano(),
+            rename(file),
+            gulp.dest(destination),
+        ]));
+    }
 };
