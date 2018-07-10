@@ -1,5 +1,7 @@
 # source files
-/src
+src
 
 # npm node modules
-/node_modules
+node_modules
+
+!lib
